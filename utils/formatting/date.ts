@@ -112,12 +112,12 @@ export const dateOrTimeAgo = (time: string, extra?: string) => {
 
   if (seconds > 3600) {
     const h = seconds / 3600;
-    return `${Math.floor(h)} hour${h == 1 ? '' : 's'} ago`;
+    return `${Math.floor(h)} hour${Math.floor(h) == 1 ? '' : 's'} ago`;
   }
 
   if (seconds > 60) {
     const m = seconds / 60;
-    return `${Math.floor(m)} minute${m == 1 ? '' : 's'} ago`;
+    return `${Math.floor(m)} minute${Math.floor(m) == 1 ? '' : 's'} ago`;
   }
   if (seconds < 60) {
     return `now`;
