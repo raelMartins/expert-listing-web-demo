@@ -181,7 +181,7 @@ function MapComponent({
             onLoad={onLoad}
             onUnmount={onUnmount}
             // options={{cameraControl: false, fullscreenControl: false, colorScheme: 'FOLLOW_SYSTEM'}}
-            options={{disableDefaultUI: true, colorScheme: 'FOLLOW_SYSTEM'}}
+            options={{disableDefaultUI: true, colorScheme: 'LIGHT'}}
           >
             {/* Child components, such as markers, info windows, etc. */}
             <></>
