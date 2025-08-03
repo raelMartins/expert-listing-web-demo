@@ -110,7 +110,7 @@ export const sfPro = localFont({
 export const sfProRounded = localFont({
   src: [
     {
-      path: '../../public/fonts/SF-Pro-Rounded-UltraLight.ttf',
+      path: '../../public/fonts/SF-Pro-Rounded-Ultralight.ttf',
       weight: '100',
       style: 'normal',
     },
