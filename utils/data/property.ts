@@ -65,7 +65,7 @@ export const dummy_properties: PropertyType[] = [
     description: `Discover luxury and comfort in this beautifully designed 4-bedroom villa, nestled in a quiet and secure neighborhood of Victoria Island. With high ceilings, floor-to-ceiling windows, and a seamless indoor-outdoor flow, this home offers the perfect blend of elegance and functionality.
     The villa features a spacious living area, modern kitchen with island, ensuite bedrooms, private garden, and smart home integration. Ideal for families or professionals looking for upscale coastal living.`,
     address: `Lekki, Lagos`,
-    location: {lat: -3.745, lng: -38.523},
+    location: {lat: 6.467571, lng: 3.701776},
     year_built: `2023`,
     property_size: `300sqm`,
     property_type: `Villa`,
@@ -98,7 +98,7 @@ export const dummy_properties: PropertyType[] = [
     description: `Discover luxury and comfort in this beautifully designed 4-bedroom villa, nestled in a quiet and secure neighborhood of Victoria Island. With high ceilings, floor-to-ceiling windows, and a seamless indoor-outdoor flow, this home offers the perfect blend of elegance and functionality.
     The villa features a spacious living area, modern kitchen with island, ensuite bedrooms, private garden, and smart home integration. Ideal for families or professionals looking for upscale coastal living.`,
     address: `Maryland, USA`,
-    location: {lat: -3.745, lng: -38.523},
+    location: {lat: 6.467571, lng: 3.701776},
     year_built: `2020`,
     property_size: `500sqm`,
     property_type: `Condo`,
@@ -124,7 +124,7 @@ export const dummy_properties: PropertyType[] = [
     description: `Discover luxury and comfort in this beautifully designed 4-bedroom villa, nestled in a quiet and secure neighborhood of Victoria Island. With high ceilings, floor-to-ceiling windows, and a seamless indoor-outdoor flow, this home offers the perfect blend of elegance and functionality.
     The villa features a spacious living area, modern kitchen with island, ensuite bedrooms, private garden, and smart home integration. Ideal for families or professionals looking for upscale coastal living.`,
     address: `Cabo`,
-    location: {lat: -3.745, lng: -38.523},
+    location: {lat: 6.467571, lng: 3.701776},
     year_built: `2017`,
     property_size: `1000sqm`,
     property_type: `Resort`,
@@ -151,7 +151,7 @@ export const dummy_properties: PropertyType[] = [
     description: `Discover luxury and comfort in this beautifully designed 4-bedroom villa, nestled in a quiet and secure neighborhood of Victoria Island. With high ceilings, floor-to-ceiling windows, and a seamless indoor-outdoor flow, this home offers the perfect blend of elegance and functionality.
     The villa features a spacious living area, modern kitchen with island, ensuite bedrooms, private garden, and smart home integration. Ideal for families or professionals looking for upscale coastal living.`,
     address: `Maldives`,
-    location: {lat: -3.745, lng: -38.523},
+    location: {lat: 6.467571, lng: 3.701776},
     year_built: `2024`,
     property_size: `250sqm`,
     property_type: `Loft`,
@@ -177,7 +177,7 @@ export const dummy_properties: PropertyType[] = [
     description: `Discover luxury and comfort in this beautifully designed 4-bedroom villa, nestled in a quiet and secure neighborhood of Victoria Island. With high ceilings, floor-to-ceiling windows, and a seamless indoor-outdoor flow, this home offers the perfect blend of elegance and functionality.
     The villa features a spacious living area, modern kitchen with island, ensuite bedrooms, private garden, and smart home integration. Ideal for families or professionals looking for upscale coastal living.`,
     address: `Lekki, Lagos`,
-    location: {lat: -3.745, lng: -38.523},
+    location: {lat: 6.467571, lng: 3.701776},
     year_built: `2027`,
     property_size: `325sqm`,
     property_type: `Villa`,
@@ -210,7 +210,7 @@ export const dummy_properties: PropertyType[] = [
     description: `Discover luxury and comfort in this beautifully designed 4-bedroom villa, nestled in a quiet and secure neighborhood of Victoria Island. With high ceilings, floor-to-ceiling windows, and a seamless indoor-outdoor flow, this home offers the perfect blend of elegance and functionality.
     The villa features a spacious living area, modern kitchen with island, ensuite bedrooms, private garden, and smart home integration. Ideal for families or professionals looking for upscale coastal living.`,
     address: `Wuse, Abuja`,
-    location: {lat: -3.745, lng: -38.523},
+    location: {lat: 6.467571, lng: 3.701776},
     year_built: `2022`,
     property_size: `300sqm`,
     property_type: `Apartment`,

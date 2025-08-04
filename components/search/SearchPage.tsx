@@ -9,17 +9,13 @@ import {dummy_properties} from '@/utils/data/property';
 import {PropertyGrid} from '../property/PropertyGrid';
 import {ExpandableMap} from '../map';
 import Link from 'next/link';
+import {Footer} from '../layout/Footer';
 
 export const SearchPageComponent = ({}) => {
   const [expandNavbar, setExpandNavbar] = useState(false);
 
   return (
-    <Box
-      color={`text.1`}
-      background={`background.2`}
-      p={{base: `20px`, md: `24px 80px`}}
-      minH={`700px`}
-    >
+    <Box color={`text.1`} background={`background.2`} minH={`700px`}>
       <Flex color={`#fff`} position={`fixed`} zIndex={`2`} top={`0px`} width={`100%`} left={`0px`}>
         {expandNavbar && (
           <Box
@@ -73,7 +69,7 @@ export const SearchPageComponent = ({}) => {
         </HStack>
       </Flex>
 
-      <Stack py={`100px`} gap={`24px`}>
+      <Stack p={{base: `100px 20px`, md: `100px 80px`}} gap={`24px`}>
         <Text
           fontFamily={`var(--font_manrope)`}
           fontWeight={`600`}
@@ -95,6 +91,7 @@ export const SearchPageComponent = ({}) => {
           </Stack>
         </Flex>
       </Stack>
+      <Footer />
     </Box>
   );
 };

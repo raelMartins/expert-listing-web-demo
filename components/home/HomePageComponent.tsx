@@ -81,7 +81,12 @@ export function HomePageComponent() {
             gap={`30px`}
             p={{base: `20px`, md: `32px 80px`}}
             transition={`.5s`}
-            bg={stickyNav ? `#105B48` : `transparent`}
+            // bg={`transparent`}
+            background={
+              stickyNav
+                ? `#105B48`
+                : `linear-gradient(360deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%)`
+            }
             pb={{base: `20px`, md: expandNavbar ? `200px` : `32px`}}
           >
             <ExpertListingLogo height={`17px`} />
@@ -96,7 +101,7 @@ export function HomePageComponent() {
           top={`0px`}
           h={`433px`}
           w={`100%`}
-          background={`linear-gradient(360deg, rgba(0, 0, 0, 0) 0%, #000000 100%)`}
+          background={`linear-gradient(360deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%)`}
           color={`#ffffff`}
           zIndex={`1`}
           p={{base: `20px`, md: `32px 80px`}}

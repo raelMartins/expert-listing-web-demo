@@ -267,10 +267,7 @@ export const ExpandableMap = memo(function ExpandableMap({
     width: '100%',
     height: '100%',
   },
-  location = {
-    lat: -3.745,
-    lng: -38.523,
-  },
+  location = {lat: 6.467571, lng: 3.701776},
   hideTabsHeader = false,
   ...rest
 }: ExpandableMapProps) {
