@@ -12,6 +12,7 @@ import Link from 'next/link';
 import {Footer} from '../layout/Footer';
 import {IoFilterOutline} from 'react-icons/io5';
 import {HiOutlineAdjustmentsVertical} from 'react-icons/hi2';
+import {Pagination} from '../layout/Pagination';
 
 export const SearchPageComponent = ({}) => {
   const [expandNavbar, setExpandNavbar] = useState(false);
@@ -71,7 +72,11 @@ export const SearchPageComponent = ({}) => {
         </HStack>
       </Flex>
 
-      <Stack p={{base: `100px 20px`, md: `100px 80px`}} gap={`24px`}>
+      <Stack
+        p={{base: `100px 20px`, md: `100px 80px`}}
+        pb={{base: `40px`, md: `40px`}}
+        gap={`24px`}
+      >
         <HStack justify={`space-between`}>
           <Text
             fontFamily={`var(--font_manrope)`}
@@ -116,8 +121,9 @@ export const SearchPageComponent = ({}) => {
           </HStack>
         </HStack>
         <Flex gap={`24px`} w={`100%`} align={`flex-start`}>
-          <Stack flex={`5`}>
+          <Stack flex={`5`} gap={`40px`}>
             <PropertyGrid properties={dummy_properties} columns={{base: 1, md: 2, lg: 2}} />
+            <Pagination />
           </Stack>
           <Stack flex={`2`} position={`sticky`} top={`100px`}>
             <ExpandableMap width={`434px`} height={`660px`} hideTabsHeader />
