@@ -1,6 +1,6 @@
 'use client';
 
-import {Box, Flex, HStack, Stack, Text} from '@chakra-ui/react';
+import {Box, Center, Flex, HStack, Stack, StackDivider, Text} from '@chakra-ui/react';
 import {ExpertListingLogo} from '../assets';
 import {NavbarMenu} from '../layout/Navbar/NavbarMenu';
 import {useState} from 'react';
@@ -10,6 +10,8 @@ import {PropertyGrid} from '../property/PropertyGrid';
 import {ExpandableMap} from '../map';
 import Link from 'next/link';
 import {Footer} from '../layout/Footer';
+import {IoFilterOutline} from 'react-icons/io5';
+import {HiOutlineAdjustmentsVertical} from 'react-icons/hi2';
 
 export const SearchPageComponent = ({}) => {
   const [expandNavbar, setExpandNavbar] = useState(false);
@@ -70,18 +72,49 @@ export const SearchPageComponent = ({}) => {
       </Flex>
 
       <Stack p={{base: `100px 20px`, md: `100px 80px`}} gap={`24px`}>
-        <Text
-          fontFamily={`var(--font_manrope)`}
-          fontWeight={`600`}
-          fontSize={`28px`}
-          lineHeight={`150%`}
-          letterSpacing={`0%`}
-        >
-          Villas for Sale in Victoria Island{' '}
-          <Box as={`span`} color={`text.3`}>
-            (145 properties)
-          </Box>
-        </Text>
+        <HStack justify={`space-between`}>
+          <Text
+            fontFamily={`var(--font_manrope)`}
+            fontWeight={`600`}
+            fontSize={`28px`}
+            lineHeight={`150%`}
+            letterSpacing={`0%`}
+          >
+            Villas for Sale in Victoria Island{' '}
+            <Box as={`span`} color={`text.3`}>
+              (145 properties)
+            </Box>
+          </Text>
+          <HStack
+            fontFamily={`var(--font_manrope)`}
+            align={`stretch`}
+            boxShadow={`3px 4px 8px 0px #0000000F`}
+            bg={`background.2`}
+            gap={`0px`}
+            borderRadius={`full`}
+            overflow={`hidden`}
+            width={`max-content`}
+            cursor={`pointer`}
+            border={`1px solid`}
+            borderColor={`border_color.1`}
+            divider={
+              <StackDivider margin={`0px !important`} borderColor={`border_color.1 !important`} />
+            }
+          >
+            <Center p={`13px 30px`} cursor={`pointer`} _hover={{bg: `background.1`}}>
+              <HStack>
+                <IoFilterOutline />
+                <Text minW={`max-content`}>Sort By</Text>
+              </HStack>
+            </Center>
+            <Center p={`12px 32px`} cursor={`pointer`} _hover={{bg: `background.1`}}>
+              <HStack>
+                <HiOutlineAdjustmentsVertical />
+                <Text minW={`max-content`}>Filters</Text>
+              </HStack>
+            </Center>
+          </HStack>
+        </HStack>
         <Flex gap={`24px`} w={`100%`} align={`flex-start`}>
           <Stack flex={`5`}>
             <PropertyGrid properties={dummy_properties} columns={{base: 1, md: 2, lg: 2}} />
