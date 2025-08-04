@@ -15,7 +15,7 @@ export const SearchPageComponent = ({}) => {
   const [expandNavbar, setExpandNavbar] = useState(false);
 
   return (
-    <Box color={`text.1`} background={`background.2`} minH={`700px`}>
+    <Box color={`text.1`} background={`background.2`}>
       <Flex color={`#fff`} position={`fixed`} zIndex={`2`} top={`0px`} width={`100%`} left={`0px`}>
         {expandNavbar && (
           <Box
@@ -82,11 +82,11 @@ export const SearchPageComponent = ({}) => {
             (145 properties)
           </Box>
         </Text>
-        <Flex gap={`24px`} w={`100%`}>
+        <Flex gap={`24px`} w={`100%`} align={`flex-start`}>
           <Stack flex={`5`}>
             <PropertyGrid properties={dummy_properties} columns={{base: 1, md: 2, lg: 2}} />
           </Stack>
-          <Stack flex={`2`}>
+          <Stack flex={`2`} position={`sticky`} top={`100px`}>
             <ExpandableMap width={`434px`} height={`660px`} hideTabsHeader />
           </Stack>
         </Flex>
