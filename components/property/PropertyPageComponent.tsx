@@ -11,15 +11,12 @@ import {
   StackDivider,
   Text,
 } from '@chakra-ui/react';
-import {ExpertListingLogo} from '../assets';
-import {NavbarMenu} from '../layout/Navbar/NavbarMenu';
 import {PropertyType} from '@/utils/types/property';
 import {Gallery} from '../gallery';
 import {Footer} from '../layout/Footer';
 import {SnaggingServiceCard} from '../home/SnaggingServiceCard';
 import {PropertyGrid} from './PropertyGrid';
 import {dummy_properties} from '@/utils/data/property';
-import Link from 'next/link';
 import {formatToCurrency} from '@/utils/formatting/amount';
 import {LocationIcon} from '../assets/home/filter';
 import {AmenityIcon} from './AmenityIcon';
@@ -29,6 +26,7 @@ import {PhoneCallIcon, WhatsappIcon} from '../assets/property';
 import {SharePropertyComponent} from './share';
 import {AvailableUnits} from './AvailableUnits';
 import {IoChevronForward} from 'react-icons/io5';
+import {Navbar} from '../layout/Navbar/Navbar';
 
 export const PropertyPageComponent = ({property}: {property: PropertyType}) => {
   const otherProperties = dummy_properties?.filter(item => item?.id !== property?.id);
@@ -43,21 +41,15 @@ export const PropertyPageComponent = ({property}: {property: PropertyType}) => {
 
   return (
     <Box color={`text.1`} background={`background.2`}>
+      <Navbar />
       <Stack gap={`0px`} px={{base: `20px`, md: `80px`}}>
-        <HStack gap={`30px`} py={{base: `20px`, md: `32px`}} transition={`.5s`}>
-          <Link href={`/`}>
-            <ExpertListingLogo height={`17px`} />
-          </Link>
-          <Box flex={`1`}></Box>
-          <NavbarMenu />
-        </HStack>
         <HStack fontSize={`16px`} color={`Green.1`} fontWeight={`500`} mb={`20px`}>
           <Text>Buy</Text>
           <IoChevronForward />
           <Text color={`text.2`}>{property?.property_name}</Text>
         </HStack>
-        <Gallery images={[...property.images, property.featured_image]} />
-        <Flex gap={`20px`} my={`40px`}>
+        <Gallery images={property.images} />
+        <Flex gap={`20px`} my={`40px`} align={`flex-start`}>
           <Stack
             flex={`3`}
             gap={`24px`}
@@ -148,7 +140,7 @@ export const PropertyPageComponent = ({property}: {property: PropertyType}) => {
               </Stack>
             )}
           </Stack>
-          <Stack flex={`2`}>
+          <Stack flex={`2`} position={`sticky`} top={`100px`}>
             {property?.developer && (
               <Flex
                 padding={`24px`}
@@ -158,15 +150,7 @@ export const PropertyPageComponent = ({property}: {property: PropertyType}) => {
                 borderColor={`border_color.1`}
                 cursor={`pointer`}
               >
-                <HStack
-                  flex={`1`}
-                  gap={`8px`}
-                  w={`100%`}
-                  as={`a`}
-                  href={property.developer.website ? property.developer.website : ``}
-                  target="_blank"
-                  rel="norefferer noopener"
-                >
+                <HStack flex={`1`} gap={`8px`} w={`100%`}>
                   {property?.developer?.company_logo && (
                     <Center
                       boxSize={`60px`}
@@ -176,6 +160,10 @@ export const PropertyPageComponent = ({property}: {property: PropertyType}) => {
                       overflow={`hidden`}
                       border={`1px solid`}
                       borderColor={`border_color.1`}
+                      as={`a`}
+                      href={property.developer.website ? property.developer.website : ``}
+                      target="_blank"
+                      rel="norefferer noopener"
                     >
                       <Image
                         src={property.developer.company_logo}
@@ -186,10 +174,25 @@ export const PropertyPageComponent = ({property}: {property: PropertyType}) => {
                     </Center>
                   )}
                   <Stack lineHeight={`100%`} gap={`12px`} flex={`1`}>
-                    <Text fontWeight={`500`} fontSize={`19px`} letterSpacing={`0%`}>
+                    <Text
+                      as={`a`}
+                      href={property.developer.website ? property.developer.website : ``}
+                      target="_blank"
+                      rel="norefferer noopener"
+                      fontWeight={`500`}
+                      fontSize={`19px`}
+                      letterSpacing={`0%`}
+                    >
                       {property?.developer?.name}
                     </Text>
-                    <Text fontWeight={`400`} fontSize={`13px`} letterSpacing={`2%`}>
+                    <Text
+                      as={`a`}
+                      href={`mailto:property?.developer?.email`}
+                      color={`Green.1`}
+                      fontWeight={`400`}
+                      fontSize={`13px`}
+                      letterSpacing={`2%`}
+                    >
                       {property?.developer?.email}
                     </Text>
                   </Stack>

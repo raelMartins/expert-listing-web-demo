@@ -65,6 +65,7 @@ export const SearchPageComponent = ({}) => {
                 stickyNav={true}
                 expandNavbar={expandNavbar}
                 setExpandNavbar={setExpandNavbar}
+                startExpanded={false}
               />
             </Box>
           </Box>
@@ -122,7 +123,7 @@ export const SearchPageComponent = ({}) => {
         </HStack>
         <Flex gap={`24px`} w={`100%`} align={`flex-start`}>
           <Stack flex={`5`} gap={`40px`}>
-            <PropertyGrid properties={dummy_properties} columns={{base: 1, md: 2, lg: 2}} />
+            <PropertyGrid properties={dummy_properties} columns={{base: 1, md: 2, lg: 2}} showAll />
             <Pagination />
           </Stack>
           <Stack flex={`2`} position={`sticky`} top={`100px`}>

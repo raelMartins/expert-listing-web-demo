@@ -39,12 +39,14 @@ export const AvailableUnits = ({property}: {property: PropertyType}) => {
           <Stack flex={`1`} gap={`12px`}>
             <Text fontWeight={`700`} fontSize={`24px`} lineHeight={`100%`} letterSpacing={`0%`}>
               {formatToCurrency({amount: unit?.price || 0})}
-              <Box
-                as={`span`}
-                color={`text.3`}
-                fontWeight={`400`}
-                fontSize={`18px`}
-              >{`/${unit?.stay_duration}`}</Box>
+              {unit?.stay_duration && (
+                <Box
+                  as={`span`}
+                  color={`text.3`}
+                  fontWeight={`400`}
+                  fontSize={`18px`}
+                >{`/${unit?.stay_duration}`}</Box>
+              )}
             </Text>
             <Text fontWeight={`400`} fontSize={`16px`} lineHeight={`100%`} letterSpacing={`0%`}>
               {unit?.property_name}

@@ -4,7 +4,7 @@ import {ChakraProps, HStack, Text, TextProps} from '@chakra-ui/react';
 import Link from 'next/link';
 import {usePathname} from 'next/navigation';
 
-export const NavbarMenu = ({...rest}:ChakraProps) => {
+export const NavbarMenu = ({...rest}: ChakraProps) => {
   const pathname = usePathname();
   console.log(pathname);
 
@@ -78,6 +78,15 @@ export const NavbarMenu = ({...rest}:ChakraProps) => {
         _after={pathname == `/shortlet` ? activeLink : underlineAnimation._after}
       >
         Shortlet
+      </Text>
+      <Text
+        as={Link}
+        href={`#`}
+        {...underlineAnimation}
+        fontWeight={pathname == `/shortlet` ? `600` : `400`}
+        _after={pathname == `/shortlet` ? activeLink : underlineAnimation._after}
+      >
+        Snagging
       </Text>
     </HStack>
   );

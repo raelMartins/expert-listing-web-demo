@@ -237,16 +237,18 @@ export const dummy_properties: PropertyType[] = [
 ];
 
 export const rental_properties = shuffleArray(
-  dummy_properties?.filter(
-    item =>
-      item.property_occupation_type == `rent` || item.property_occupation_type?.includes('rent')
-  )
+  dummy_properties
+  // ?.filter(
+  //   item =>
+  //     item.property_occupation_type == `rent` || item.property_occupation_type?.includes('rent')
+  // )
 );
 
 export const purchase_properties = shuffleArray(
-  dummy_properties?.filter(
-    item => item.property_occupation_type == `buy` || item.property_occupation_type?.includes('buy')
-  )
+  dummy_properties
+  // ?.filter(
+  //   item => item.property_occupation_type == `buy` || item.property_occupation_type?.includes('buy')
+  // )
 );
 
 export const shortlet_properties = shuffleArray(

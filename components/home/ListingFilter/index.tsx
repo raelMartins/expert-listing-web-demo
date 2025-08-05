@@ -11,16 +11,16 @@ import {useRouter} from 'next/navigation';
 export const ListingFilter = ({
   stickyNav,
   expandNavbar,
-
+  startExpanded = true,
   setExpandNavbar,
 }: {
   stickyNav: boolean;
   expandNavbar: boolean;
-
+  startExpanded?: boolean;
   setExpandNavbar: Dispatch<boolean>;
 }) => {
   const router = useRouter();
-  const [isExpanded, setIsExpanded] = useState(true);
+  const [isExpanded, setIsExpanded] = useState<boolean>(startExpanded || true);
 
   const filterStackStyle: BoxProps = {
     flex: isExpanded ? `1` : `auto`,
@@ -83,6 +83,7 @@ export const ListingFilter = ({
       zIndex={`4`}
       borderRadius={isExpanded ? `24px` : `10.5px`}
       transition={`.5s`}
+      display={{base: `none`, xl: `block`}}
     >
       {!isExpanded && (
         <Box

@@ -27,6 +27,7 @@ export function HomePageComponent() {
       const rect = myElement.getBoundingClientRect();
 
       // The 'top' property gives the distance from the viewport top
+      // const scrollThreshold: number = rect.top - 100;
       const scrollThreshold: number = rect.top;
 
       window.scrollTo(0, 0);
@@ -134,10 +135,10 @@ export function HomePageComponent() {
           // zIndex={`1`}
         >
           <Box
-            p={{base: `0px 20px`, md: `0px 80px`}}
+            px={expandNavbar || !stickyNav ? {base: `20px`, md: `80px`} : `0px`}
             position={stickyNav ? `fixed` : `relative`}
             top={!stickyNav ? `0px` : expandNavbar ? `100px` : `16px`}
-            w={expandNavbar || !stickyNav ? `100%` : `50%`}
+            w={expandNavbar || !stickyNav ? `100%` : `35%`}
             zIndex={`100`}
             transition={`.5s`}
             // display={{base: `none`, xl: `block`}}

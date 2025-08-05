@@ -100,12 +100,14 @@ const ExpandedShareView = ({
             <Stack flex={`1`} gap={`12px`}>
               <Text fontWeight={`700`} fontSize={`24px`} lineHeight={`100%`} letterSpacing={`0%`}>
                 {formatToCurrency({amount: property?.price || 0})}
-                <Box
-                  as={`span`}
-                  color={`text.3`}
-                  fontWeight={`400`}
-                  fontSize={`18px`}
-                >{`/${property?.stay_duration}`}</Box>
+                {property?.stay_duration && (
+                  <Box
+                    as={`span`}
+                    color={`text.3`}
+                    fontWeight={`400`}
+                    fontSize={`18px`}
+                  >{`/${property?.stay_duration}`}</Box>
+                )}
               </Text>
               <Text fontWeight={`400`} fontSize={`16px`} lineHeight={`100%`} letterSpacing={`0%`}>
                 {property?.property_name}

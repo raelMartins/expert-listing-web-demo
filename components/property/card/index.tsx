@@ -78,12 +78,14 @@ export const PropertyCard = ({
         <Stack gap={`8px`}>
           <Text fontWeight={`700`} fontSize={`24px`} lineHeight={`140%`} letterSpacing={`0%`}>
             {formatToCurrency({amount: data?.price || 0})}
-            <Box
-              as={`span`}
-              color={`#52525B`}
-              fontWeight={`400`}
-              fontSize={`18px`}
-            >{`/${data?.stay_duration}`}</Box>
+            {data?.stay_duration && (
+              <Box
+                as={`span`}
+                color={`#52525B`}
+                fontWeight={`400`}
+                fontSize={`18px`}
+              >{`/${data?.stay_duration}`}</Box>
+            )}
           </Text>
           <HStack color={`text.3`} gap={`10px`}>
             <LocationIcon baseColor="text.3" boxSize={`16px`} />

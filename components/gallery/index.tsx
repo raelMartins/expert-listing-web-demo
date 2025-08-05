@@ -98,6 +98,8 @@ export const Gallery: React.FC<GalleryProps> = ({images, fullGallery}) => {
         templateRows={
           imagesArray.length < 3
             ? `515px`
+            : imagesArray.length == 3
+            ? `240px 240px`
             : !expandGallery
             ? `325px 170px`
             : `repeat(${Math.ceil(imagesArray.length / 3)}, 325px)`
@@ -108,7 +110,7 @@ export const Gallery: React.FC<GalleryProps> = ({images, fullGallery}) => {
           //prettier-ignore
           const columnSpan =
             imgLength == 1 ? 30 : imgLength == 2 ? 15: 
-            expandGallery ? 6 : i == 0 ? 18 : i == 1 ? 12 : 6;
+            expandGallery ? 6 : i == 0 ? 18 : i == 1 ||  (i == 2 &&  imgLength == 3) ? 12 : 6;
 
           //prettier-ignore
           const rowSpan = expandGallery || imgLength < 3 ? 1 : i == 0 ? 2 : 1;
