@@ -3,10 +3,16 @@ import {PropertyType} from '../types/property';
 export const ai_properties: PropertyType[] = [
   {
     id: 1,
-    featured_image: {
-      src: '/images/listings/listing_image-5.png',
-      alt: 'Exterior view of a modern apartment building',
-    },
+    featured_image: [
+      {
+        src: '/images/listings/listing_image-5.png',
+        alt: 'Exterior view of a modern apartment building',
+      },
+      {
+        src: '/images/listings/listing_image-8.jpg',
+        alt: 'Exterior view of a modern apartment building',
+      },
+    ],
     images: [
       {
         src: '/images/listings/listing-overview-image-11.jpg',
@@ -72,10 +78,20 @@ export const ai_properties: PropertyType[] = [
   },
   {
     id: 2,
-    featured_image: {
-      src: '/images/listings/listing_image-9.jpg',
-      alt: 'Spacious suburban family home',
-    },
+    featured_image: [
+      {
+        src: '/images/listings/listing_image-9.jpg',
+        alt: 'Spacious suburban family home',
+      },
+      {
+        src: '/images/listings/listing_image-4.png',
+        alt: 'Spacious suburban family home',
+      },
+      {
+        src: '/images/listings/listing_image-7.jpg',
+        alt: 'Spacious suburban family home',
+      },
+    ],
     images: [
       {
         src: '/images/listings/listing-overview-image-13.jpg',
@@ -180,10 +196,16 @@ export const ai_properties: PropertyType[] = [
   },
   {
     id: 4,
-    featured_image: {
-      src: '/images/listings/listing_image-7.jpg',
-      alt: 'Exterior of a beachfront villa',
-    },
+    featured_image: [
+      {
+        src: '/images/listings/listing_image-7.jpg',
+        alt: 'Exterior of a beachfront villa',
+      },
+      {
+        src: '/images/listings/listing_image-3.png',
+        alt: 'Exterior view of a modern apartment building',
+      },
+    ],
     images: [
       {
         src: '/images/listings/listing-overview-image-5.jpg',
@@ -472,10 +494,16 @@ export const ai_properties: PropertyType[] = [
   },
   {
     id: 9,
-    featured_image: {
-      src: '/images/listings/listing_image-8.jpg',
-      alt: 'Exterior of a modern condo building',
-    },
+    featured_image: [
+      {
+        src: '/images/listings/listing_image-8.jpg',
+        alt: 'Exterior of a modern condo building',
+      },
+      {
+        src: '/images/listings/listing_image-2.png',
+        alt: 'Exterior view of a modern apartment building',
+      },
+    ],
     images: [
       {
         src: '/images/listings/listing-overview-image-17.jpg',

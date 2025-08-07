@@ -10,6 +10,7 @@ import {motion} from 'framer-motion';
 import Image from 'next/image';
 import {useRouter} from 'next/navigation';
 import {FeaturedAmenities} from './FeaturedAmenities';
+import {ImageSlider} from '@/components/gallery/ImageSlider';
 
 const MotionBox = motion(Stack);
 
@@ -67,12 +68,22 @@ export const PropertyCard = ({
             Listed {dateOrTimeAgo(data?.date_created?.toUTCString())}
           </Box>
         </HStack>
-        <Image
-          src={data?.featured_image.src}
-          alt={data?.featured_image.src}
-          fill
-          style={{objectFit: `cover`}}
-        />
+        {Array.isArray(data?.featured_image) ? (
+          <Center w={`100%`} h={`100%`}>
+            <ImageSlider
+              images={data?.featured_image}
+              height={{base: `480px`, md: `300px`}}
+              property_id={data.id}
+            />
+          </Center>
+        ) : (
+          <Image
+            src={data?.featured_image.src}
+            alt={data?.featured_image.src}
+            fill
+            style={{objectFit: `cover`}}
+          />
+        )}
       </Center>
       <Flex direction={`column`} gap={`16px`}>
         <Stack gap={`8px`}>

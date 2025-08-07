@@ -12,7 +12,7 @@ export type AmenityType = {
 
 export interface PropertyType {
   id: number | string;
-  featured_image: {src: string; alt?: string};
+  featured_image: {src: string; alt?: string}[] | {src: string; alt?: string};
   images: {src: string; alt?: string; featured?: boolean}[];
   property_name: string;
   price: number | string;
