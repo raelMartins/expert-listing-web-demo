@@ -16,6 +16,7 @@ import {LocationIcon} from '@/components/assets/home/filter';
 import {IoMailOutline} from 'react-icons/io5';
 import {FaFacebookMessenger} from 'react-icons/fa6';
 import {PiDotsThreeCircleLight} from 'react-icons/pi';
+import {ImageSlider} from '@/components/gallery/ImageSlider';
 
 const MotionBox = motion.create(Box);
 const MotionButton = motion.create(Button);
@@ -90,12 +91,22 @@ const ExpandedShareView = ({
               borderRadius={`16px`}
               overflow={`hidden`}
             >
-              <Image
-                src={property?.featured_image?.src}
-                alt={property?.featured_image?.alt || ``}
-                fill
-                style={{objectFit: `cover`}}
-              />
+              {Array.isArray(property?.featured_image) ? (
+                <Center w={`100%`} h={`100%`}>
+                  <ImageSlider
+                    images={property?.featured_image}
+                    height={`200px`}
+                    property_id={property.id}
+                  />
+                </Center>
+              ) : (
+                <Image
+                  src={property?.featured_image.src}
+                  alt={property?.featured_image.src}
+                  fill
+                  style={{objectFit: `cover`}}
+                />
+              )}
             </Center>
             <Stack flex={`1`} gap={`12px`}>
               <Text fontWeight={`700`} fontSize={`24px`} lineHeight={`100%`} letterSpacing={`0%`}>

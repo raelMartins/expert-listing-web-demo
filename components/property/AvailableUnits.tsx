@@ -5,6 +5,7 @@ import {shuffleArray} from '@/utils/utility_functions';
 import {Box, Center, Flex, Stack, Text} from '@chakra-ui/react';
 import Image from 'next/image';
 import {FeaturedAmenities} from './card/FeaturedAmenities';
+import {ImageSlider} from '../gallery/ImageSlider';
 
 export const AvailableUnits = ({property}: {property: PropertyType}) => {
   const units = shuffleArray(dummy_properties?.filter(el => el.id !== property?.id)).slice(0, 2);
@@ -29,12 +30,18 @@ export const AvailableUnits = ({property}: {property: PropertyType}) => {
             overflow={`hidden`}
             h={{base: `auto`, md: `100%`}}
           >
-            <Image
-              src={unit?.featured_image?.src}
-              alt={unit?.featured_image?.alt || ``}
-              fill
-              style={{objectFit: `cover`}}
-            />
+            {Array.isArray(unit?.featured_image) ? (
+              <Center w={`100%`} h={`100%`}>
+                <ImageSlider images={unit?.featured_image} height={`300px`} property_id={unit.id} />
+              </Center>
+            ) : (
+              <Image
+                src={unit?.featured_image.src}
+                alt={unit?.featured_image.src}
+                fill
+                style={{objectFit: `cover`}}
+              />
+            )}
           </Center>
           <Stack flex={`1`} gap={`12px`}>
             <Text fontWeight={`700`} fontSize={`24px`} lineHeight={`100%`} letterSpacing={`0%`}>
