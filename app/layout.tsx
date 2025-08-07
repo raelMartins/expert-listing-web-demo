@@ -20,6 +20,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link
+          rel="preload"
+          href="/images/home_hero.png"
+          as="image"
+          type="image/png"
+          fetchPriority="high"
+        />
+      </head>
       <body
         className={`${sfPro.variable} ${sfProRounded.variable} ${manrope.variable} ${outfit.variable} ${sfProRounded.className}`}
         style={{maxWidth: `2000px`, margin: `0 auto`, overflowX: `clip`}}

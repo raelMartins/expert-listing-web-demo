@@ -17,7 +17,6 @@ export function HomePageComponent() {
   const [listingsType, setListingsType] = useState<PropertyOccupationType>('buy');
   const [stickyNav, setStickyNav] = useState(false);
   const [expandNavbar, setExpandNavbar] = useState(true);
-  const [imageLoaded, setImageLoaded] = useState(false);
 
   useEffect(() => {
     // Get a reference to the element (replace 'myElement' with your element's ID or selector)
@@ -51,17 +50,8 @@ export function HomePageComponent() {
     }
   }, []);
 
-  const handleImageLoad = () => {
-    setImageLoaded(true);
-    console.log('Image Loaded');
-  };
-
   return (
-    <Box
-      color={`text.1`}
-      background={`background.2`}
-      visibility={!imageLoaded ? `hidden` : `visible`}
-    >
+    <Box color={`text.1`} background={`background.2`}>
       <Box minH={`768px`} position={`relative`} w={`100%`} overflow={`hidden`}>
         <Flex
           color={`#fff`}
@@ -139,8 +129,7 @@ export function HomePageComponent() {
           alt="Hero"
           fill
           style={{objectFit: `cover`}}
-          priority
-          onLoad={handleImageLoad}
+          priority={true}
         />
         <Center
           flexDir={`column`}
